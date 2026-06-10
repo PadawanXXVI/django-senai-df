@@ -16,8 +16,36 @@ Professor:
 ### 4.1 Preparação da base: Python e ambiente
 
 - Visual Studio Code
--  
+- Instalar extensão pt-BR
+- Criar repositório
+- Abrir repositório no VS Code
+- Instalar a extensão Python (da Microsoft)
+- Instalar Python na máquina (versão 3.10.0)
+- Instalar o ambiente virtual (CTRL SHIFT P - criar ambiente)
+- Ativar o ambiente virtual (source)
 
 ### 4.2 Construção do foguete: instalação do Django e projeto
+
+- Instalar o Django (verificar versão compatível com Python 3.10.0)
+    - [site do próprio Django](https://www.djangoproject.com/)
+    - [pypi](https://pypi.org/) 
+
+- Instalar Django por pip
+    - pip install django==4.1
+
+- Verificar bibliotecas instaladas
+    - pip list
+
+- Criar projeto
+
+No terminal:
+
+    - criar o projeto: django-admin startproject setup . (até o . "ponto")
+    - rodar o projeto: python manage.py runserver
+    - acessar o localhost: http://127.0.0.1:8000/
+    - adicionando Módulos de Missão (Apps): python manage.py starapp associado (adiciona o módulo ou app "associado")
+
+
 ### 4.3 Criação dos módulos: aplicativos e funcionalidades
+
 ### 4.4 Diário de missão: controle de versão com Git.
