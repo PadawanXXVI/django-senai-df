@@ -14,6 +14,10 @@ Professor:
 ## 4 A sequência de lançamento
 
 ### 4.1 Preparação da base: Python e ambiente
+
+- Visual Studio Code
+-  
+
 ### 4.2 Construção do foguete: instalação do Django e projeto
 ### 4.3 Criação dos módulos: aplicativos e funcionalidades
 ### 4.4 Diário de missão: controle de versão com Git.
