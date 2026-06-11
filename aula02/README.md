@@ -3,7 +3,7 @@ Brasília, 11 de junho de 2026
 Anderson de Matos Guimarães  
 Professor: Rômulo
 
-# 🚀 DESENVOLVEDOR WEB COM PYTHON E JANGO
+# 🚀 DESENVOLVEDOR WEB COM PYTHON E DJANGO
 
 ## 1 Configurações regionais
 
