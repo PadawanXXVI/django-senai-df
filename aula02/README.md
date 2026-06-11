@@ -23,7 +23,7 @@ Professor: Rômulo
     USE_TZ = True
     ```
 
-## 2 Modelagem do Banco de dados
+## 2 Modelagem e Conexão com o Banco de dados
 
 - Acessar pasta do projeto ('motorartigos') e o arquivo models.py
 - Startar o MySQL por meio do Xampp
