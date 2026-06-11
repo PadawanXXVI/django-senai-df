@@ -102,7 +102,8 @@ Após o módulo (entidade) Autor criado:
 Se necessário, instalar o app:
 
 Em \setup\settings.py,
-em ``
+em `INSTALLED_APPS`:
+
 ```python
 INSTALLED_APPS = [
     'django.contrib.admin',
