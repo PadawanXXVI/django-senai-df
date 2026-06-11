@@ -25,15 +25,22 @@ Professor: Rômulo
 
 ## 2 Modelagem e Conexão com o Banco de dados
 
-- Acessar pasta do projeto ('motorartigos') e o arquivo models.py
+### 2.1 Conexão com o MySQL
+
 - Startar o MySQL por meio do Xampp
 - Abrir o MySQL Workbench
 - Criar uma mova conexão (se necessário)
-- Criar o banco de dados:
+- Acessar a conexão (existente ou a que foi criada)
+
+### 2.2 Criar o Banco de Dados
+
+- Criar o banco de dados no MySQL:
 
 ```sql
 CREATE DATABASE djangoartigos;
 ```
+
+### 2.3 Conectar o Django ao banco de dados do MySQL
 
 - Em setup/settings.py, usar a configuação de banco de dados:
 
@@ -57,6 +64,8 @@ DATABASES = {
 
 Obs.: Pode deixar a conexão do sqlite comentada  com `aspas triplas (``` texto ```)`
 
+Via terminal:
+
 - Informar que iremos Usar o MySQL:
 ```python
 pip install mysqlclient
@@ -66,4 +75,57 @@ pip install mysqlclient
 python manage.py runserver
 ```
 
-Obs: Se antes de instalar o conector MySQL (`pip install mysqlclient`) o seridor estiver ativo, precisará desativá-lo antes e depois reativar (`python manage.py runserver`).
+Obs: Se antes de instalar o conector MySQL (`pip install mysqlclient`) o seridor estiver ativo, precisará desativá-lo antes (CTRL + C) e depois reativar (`python manage.py runserver`).
+
+### 2.4 Modelagem das entidades
+
+Em models (`\motorartigos\models.py`):
+
+1. Criar a entidade 'Autor'
+
+```python
+class Autor(models.Model):
+    nome = models.CharField(max_length=100)
+    biografia = models.TextField()
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.name
+```
+
+Após o módulo (entidade) Autor criado:
+
+2. Criar 'migrations'
+
+> Obs.: parar o servidor (`CTRL + C`)
+
+Se necessário, instalar o app:
+
+Em \setup\settings.py,
+em ``
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'mortorartigos', # inserido para criar o app
+]
+```
+
+No terminal:
+
+Preparar o migration:
+
+```python
+python manage.py makemigrations motorartigos
+```
+
+Depois, para aplicar o migration:
+
+```python
+python manage.py migrate motorartigos
+```
+
