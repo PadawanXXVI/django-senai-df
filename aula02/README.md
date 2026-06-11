@@ -14,9 +14,9 @@ Professor: Rômulo
     # Internationalization
     # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-    LANGUAGE_CODE = 'pt-BR'
+    LANGUAGE_CODE = 'pt-BR' # valor já alterado
 
-    TIME_ZONE = 'America/Sao_Paulo'
+    TIME_ZONE = 'America/Sao_Paulo'# valor já alterado
 
     USE_I18N = True
 
