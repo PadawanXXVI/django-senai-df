@@ -8,12 +8,9 @@ class Autor(models.Model):
     # atributo
     # O atributo 'id' é automático (no django).
     # Chave primária: imutável, universal e única
-    nome = models.CharField(max_lenght=100)
+    nome = models.CharField(max_length=100)
     biografia = models.TextField()
     email = models.EmailField()
 
     def __str__(self):
         return self.nome
-
-
-    
