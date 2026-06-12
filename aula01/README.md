@@ -43,7 +43,7 @@ No terminal:
     - criar o projeto: django-admin startproject setup . (até o . "ponto")
     - rodar o projeto: python manage.py runserver
     - acessar o localhost: http://127.0.0.1:8000/
-    - adicionando Módulos de Missão (Apps): python manage.py starapp associado (adiciona o módulo ou app "associado")
+    - adicionando Módulos de Missão (Apps): python manage.py startapp associado (adiciona o módulo ou app "associado")
 
 
 ### 4.3 Criação dos módulos: aplicativos e funcionalidades
