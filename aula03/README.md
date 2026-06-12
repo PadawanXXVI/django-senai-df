@@ -136,7 +136,7 @@ Após, voltar no navegador `http://127.0.0.1:8000/admin`:
 
 Obs.: Por enquanto, apenas o **superuser** poderá cadastrar novos autores.
 
-## 5 Exercício
+## Exercício 02
 
 Crie o admin do EixoTecnologia
 
