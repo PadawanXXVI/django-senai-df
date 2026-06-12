@@ -214,3 +214,19 @@ python manage.py runserver
 A empresa solicitou mais uma modificação no sistema. Eles estão necessitando de um novo aplicativo. O nome do aplicativo é **chatbot**.
 
 Sua missão: criar o aplicativo e instalar o aplicativo e fazer o goguetinho aparecer normalmente.
+
+- Resolução:
+
+1. No terminal, criar o novo app **chatbot**:
+
+```bash
+python manage.py startapp chatbot
+```
+
+2. No terinal, rodar o servidor:
+
+```bash
+python manage.py runserver
+```
+
+**PARABÉNS: seu foguetinho decolou**
