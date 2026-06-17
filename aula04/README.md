@@ -120,3 +120,7 @@ def index(request):
     # return HttpResponse("<h1>Oi</h1>") comentado, pois iremos usar index.html
     return render(request, 'templates\motorartigos\index.html') # ativa a página index.html
 ```
+
+---
+
+## Part II - STATIC
