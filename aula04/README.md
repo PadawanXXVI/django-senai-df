@@ -90,7 +90,7 @@ Em `setup > settings.py`:
 
   DIRS - informa para o DJANGO onde buscar templates adicionais
 
-4. 📃´Criando e renderizando templates 
+4. 📃 Criando e renderizando templates 
 
 Na pasta templates (se não existir, deve ser criada dentro da raiz do diretório):
 
