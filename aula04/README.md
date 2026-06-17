@@ -38,7 +38,7 @@ def index(request):
     return HttpResponse("<h1>Oi</h1>") # Cria a 'página' HTML (index)
 ```
 
-## Configurando a rota - aqui começa pra valer
+## 🚶‍♀️ Configurando a rota - aqui começa pra valer
 
 1. Em `motorartigos > urls.py` (caso urls.py não existir, criar o arquivo)
 
@@ -63,12 +63,12 @@ urlpatterns = [
 ]
 ```
 
-## Configurar o diretório `templates`
+3. Configurar o diretório `templates`
 
 Em `setup > settings.py`:
 
-1. Confirmar que módulo `os` foi importado
-2. Em `TEMPLATES`, no `DIRS`:
+- Confirmar que módulo `os` foi importado
+- Em `TEMPLATES`, no `DIRS`:
    
   ```python
   TEMPLATES = [
@@ -90,13 +90,13 @@ Em `setup > settings.py`:
 
   DIRS - informa para o DJANGO onde buscar templates adicionais
 
-## Criando e renderizando templates 
+4. 📃´Criando e renderizando templates 
 
 Na pasta templates (se não existir, deve ser criada dentro da raiz do diretório):
 
-1. Criar uma pasta com o mesmo nome do aplicativo (`motorartigos`)
-2. Dentro da pasta mortorartigos, criar a pasta `index.html`
-3. Criar a página html em `index.html` com '!':
+- Criar uma pasta com o mesmo nome do aplicativo (`motorartigos`)
+- Dentro da pasta mortorartigos, criar a pasta `index.html`
+-  Criar a página html em `index.html` com '!':
    
 ```html
    !DOCTYPE html>
@@ -113,7 +113,7 @@ Na pasta templates (se não existir, deve ser criada dentro da raiz do diretóri
 </html>
 ```
 
-4. Definir a rota em `motorartigos > views.py`:
+- Definir a rota em `motorartigos > views.py`:
 
 ```python
 def index(request):
