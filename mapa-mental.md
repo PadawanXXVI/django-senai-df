@@ -21,6 +21,8 @@
 
 - Instalar a versão 3.10.0 do Python (<https://www.python.org/downloads/release/python-3100/>)
 
+Obs.: não esquecer de marcar a opção: `Add to path`
+
 ---
 
 ### 4. Instalar o ambiente virtual no VS Code
@@ -228,6 +230,51 @@ Caso, em algum momento, você precise parar o servidor Django, basta usarmos a t
 
 ---
 
-## 5. Modelar entidades
+### 5. Modelar entidades
+
+Dentro do arquivo `models.py` (`/motorartigos/models.py`):
+
+- Criar a entidade 'Autor':
+  
+```python
+class Autor(models.Model):
+    # atributo
+    # O atributo 'id' é automático (no django).
+    # Chave primária: imutável, universal e única
+    nome = models.CharField(max_length=100)
+    biografia = models.TextField()
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.nome
+```
+
+- Inserir o app na lista de apps, dentro de `/setup/settings.py` em INSTALLED_APPS:
+
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'motorartigos', # inserido para poder criar o app
+]
+```
+
+- Criar o 'migration':
+
+  - Para preparar o 'migration'
+
+```python
+python manage.py makemigrations motorartigos
+```
+
+  - Rodar 'migration'
+
+```python
+python manage.py migrate motorartigos
+```
 
 ---
