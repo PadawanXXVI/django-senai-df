@@ -104,3 +104,82 @@ Em index.html, link a nova página com a imagem do chatgpt
     <img src="{% static 'img/logo-maritaca.png' %}" alt=" logo maritaca em verde representado por um papagaio">
 </body>
 ```
+
+### DRY (Don't Repeat Yourself)
+
+Não seja repetitivo!
+
+Com a crição das páginas `index.html` e `artigo.html` podemos concluir que houve repetição de código `HTML`.
+
+Para evitar repetição, usamos a técnica DRY.
+
+#### Criação base.html
+
+##### Criamos um novo arquivo chamado base.html em `templates/motorartigos`
+
+```html
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django DF</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Puxa o css-->
+</head>
+<body>
+    <!-- Cria um menu-->
+    <ul>
+        <li>fundamentos python</li>
+        <li>fundamentos redes</li>
+        <li>fundamentos nuvem</li>
+        <li>fundamentos IA</li>
+        <li>fundamentos Data Science</li>
+        <li>fundamentos Django</li>
+    </ul>
+    <!-- Cria títulos-->
+    <h1> Django DF</h1>
+    <h6> Comunidade Django do Distrito Federal</h6>
+
+    <!-- Local que irá herdar o conteúdo das outras páginas-->
+    {% block content %}
+    
+    {% endblock%}
+
+</body>
+</html>
+```
+
+##### Substitimos todo o conteúdo de index.html por
+
+```html
+{% extends 'motorartigos/base.html' %} <!-- herda todo o HTML de base.html, inclusive todas as tags-->  
+{% load static %} 
+
+<!-- Coloca todo o conteúdo da página no bloco de conteúdo-->
+
+{% block content %}
+    <h1>O melhor site de Django, IA e Data Science do Brasil</h1>
+
+    <a href="{% url 'artigo'%}"> <!-- cria m href para usar o url name-->
+        <img src="{% static 'img/logo-chatgpt.png' %}" alt=" logo do chatgpt dourado"> <!-- transfere o link da imagem para dentro do href-->
+        <img src="{% static 'img/logo-claude.png' %}" alt="logo claude laranja com nome em preto">
+        <img src="{% static 'img/logo-maritaca.png' %}" alt=" logo maritaca em verde representado por um papagaio">
+    </a>     
+    
+{% endblock%}
+```
+
+##### Em seguida, substituímos todo o conteúdo de artigo.html por
+
+```html
+{% extends 'motorartigos/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h1>Cheguei aqui</h1>
+
+{% endblock%}
+```

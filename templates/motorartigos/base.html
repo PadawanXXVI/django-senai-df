@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django DF</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Puxa o css-->
+</head>
+<body>
+    <!-- Cria um menu-->
+    <ul>
+        <li>fundamentos python</li>
+        <li>fundamentos redes</li>
+        <li>fundamentos nuvem</li>
+        <li>fundamentos IA</li>
+        <li>fundamentos Data Science</li>
+        <li>fundamentos Django</li>
+    </ul>
+    <!-- Cria títulos-->
+    <h1> Django DF</h1>
+    <h6> Comunidade Django do Distrito Federal</h6>
+
+    <!-- Local que irá herdar o conteúdo das outras páginas-->
+    {% block content %}
+    
+    {% endblock%}
+
+</body>
+</html>
