@@ -66,6 +66,7 @@ Obs.: meu_ambiente é nome que escolhemos para o ambiente virtual, mas o comum �
   - Selecionar a opção `Command Prompt` (terminal padrão do Windows, antes do PowerShell). Assim, toda vez que abrir um terminal novo, será aberto o teminal `CMD`.
 - Pode ser udado outro termnial, como o Ubuntu (caso tenha instalado o WSL, ou até mesmo o terminl Git Bash, muito útil para projetos Git).
 - Caso você esteja usando um terminal WSL ou Git Bash, para ativar o ambiente virtual, o comando no terminal é: `source .venv/Scripts/activate`.
+- A maior vantagem de usar um ambiente virtual no Python dentro do VS Code é simples: controle total sobre as dependências do seu projeto, evitando conflitos e garantindo que cada projeto funcione exatamente com as versões de bibliotecas que ele precisa.
 
 ---
 
