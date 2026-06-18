@@ -8,7 +8,7 @@
 
 ### 2. Configurações do VS Code
 
-- Instalar extensão `protuguese`: atualiza o VS Code para o português brasileiro. Caso deseje, pode manter em inglês.
+- Instalar extensão `portuguese`: atualiza o VS Code para o português brasileiro. Caso deseje, pode manter em inglês.
 - Abrir o repositório (pasta principal):
   - `Arquivo > abrir pasta > escolher o local` (área de trabalho, C: etc.) e:
     - Caso não tenha criado a pasta, clicar em `Nova pasta`
@@ -27,19 +27,21 @@ Obs.: não esquecer de marcar a opção: `Add to path`
 
 ### 4. Instalar o ambiente virtual no VS Code
 
-- Com as teclas `CTRL + SHIFT + P`:
-  - Digitar: python criar ambiente
-  - Escolher venv
-  - Selecionar a versão Python 3.10.0 (aparecem as versões do Python que estão instaladas no PC)
+#### Com as teclas `CTRL + SHIFT + P`
+  
+- Digitar: python criar ambiente
+- Escolher venv
+- Selecionar a versão Python 3.10.0 (aparecem as versões do Python que estão instaladas no PC)
 
-- No terminal (você pode ativar o terminal com `CTRL + '` ou pelo menu `Terminal` do VS Code):
-  - Verificar quais versões do python estão instaladas:
+#### No terminal (você pode ativar o terminal com `CTRL + '` ou pelo menu `Terminal` do VS Code)
+
+##### Verificar quais versões do python estão instaladas
 
 ```bash
 py --version
 ```
 
-  - Criar o ambiente virtual
+##### Criar o ambiente virtual
 
 ```bash
 python3.10 -m venv meu_ambiente
@@ -118,8 +120,10 @@ No próprio terminal no VS Code, aparecerá que o servidor Django foi iniciado e
 
 No terminal:
 
+- adicionando Módulos de Missão (Apps):
+  
 ```bash
-- adicionando Módulos de Missão (Apps): python manage.py startapp motorartigos (adiciona o módulo ou app "motorartigos") 
+python manage.py startapp motorartigos # adiciona o módulo ou app "motorartigos" 
 ```
 
 ---
@@ -263,15 +267,17 @@ INSTALLED_APPS = [
 ]
 ```
 
-- Criar o 'migration':
+---
 
-  - Para preparar o 'migration'
+### 6. Criar o 'migration'
+
+#### Para preparar o 'migration'
 
 ```python
 python manage.py makemigrations motorartigos
 ```
 
-  - Rodar 'migration'
+#### Rodar 'migration'
 
 ```python
 python manage.py migrate motorartigos
