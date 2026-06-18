@@ -126,7 +126,7 @@ Para evitar repetição, usamos a técnica DRY.
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django DF</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Puxa o css-->
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}"> <!-- Puxa o css-->
 </head>
 <body>
     <!-- Cria um menu-->
@@ -164,9 +164,10 @@ Para evitar repetição, usamos a técnica DRY.
 
     <a href="{% url 'artigo'%}"> <!-- cria m href para usar o url name-->
         <img src="{% static 'img/logo-chatgpt.png' %}" alt=" logo do chatgpt dourado"> <!-- transfere o link da imagem para dentro do href-->
-        <img src="{% static 'img/logo-claude.png' %}" alt="logo claude laranja com nome em preto">
-        <img src="{% static 'img/logo-maritaca.png' %}" alt=" logo maritaca em verde representado por um papagaio">
-    </a>     
+    </a>
+    
+    <img src="{% static 'img/logo-claude.png' %}" alt="logo claude laranja com nome em preto">
+    <img src="{% static 'img/logo-maritaca.png' %}" alt=" logo maritaca em verde representado por um papagaio">
     
 {% endblock%}
 ```
@@ -182,4 +183,59 @@ Para evitar repetição, usamos a técnica DRY.
     <h1>Cheguei aqui</h1>
 
 {% endblock%}
+```
+
+Em `templates/mortorartigos`:
+
+Criar a pasta `partials` para colocar "pedaços" do site.
+
+Dentro de `partials`, criar o arquivo `_footer.html`:
+
+```html
+{% load static %}
+
+<footer class="rodape">
+
+DJANGODF &copy; 2026
+
+</footer>
+```
+
+Depois, incluir no base.html para receber o rodapé
+
+```html
+<body>
+    <!-- Cria um menu-->
+    <ul>
+        <li>fundamentos python</li>
+        <li>fundamentos redes</li>
+        <li>fundamentos nuvem</li>
+        <li>fundamentos IA</li>
+        <li>fundamentos Data Science</li>
+        <li>fundamentos Django</li>
+    </ul>
+    <!-- Cria títulos-->
+    <h1> Django DF</h1>
+    <h6> Comunidade Django do Distrito Federal</h6>
+
+    <!-- Local que irá herdar o conteúdo das outras páginas-->
+    {% block content %}
+    
+    {% endblock%}
+
+    <!-- Inserir o rodapé-->
+    {% include 'motorartigos/partials/_footer.html' %} <!-- Inserido para buscar o footer-->
+
+</body>
+```
+
+Depois, criar uma classe em css:
+
+```css
+.rodape{
+    border: 2px solid #9c7c7c;
+    width: 100%;
+    height: 50px;
+    color: azure;
+}
 ```
