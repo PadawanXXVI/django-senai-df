@@ -1,4 +1,4 @@
-{% load static%} <!-- carrega a página como estática-->
+{% load static %} <!-- carrega a página como estática-->
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -6,10 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django Artigos</title>
-    <link rel="stylesheet" href="{% static '/css/styles.css' %}"> <!--link rel="stylesheet" HTML Normal //  Template Engine-->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!--link rel="stylesheet" HTML Normal //  Template Engine-->
 </head>
 <body>
     
-    <h1>O mehlhor site de Django, IA e Data Science do Brasil</h1>
+    <h1>O melhor site de Django, IA e Data Science do Brasil</h1>
+    <img src="{% static 'img/logo-chagtp.png' %}" alt=" logo do chatgpt verde com branco">
+    <!-- img é a tag para inserir imagem  ➡ src = enderço da imagem, alt = cria audio descrição para pessoas com deficiência visual -->
+    <img src="{% static 'img/claude-logo.png' %}" alt="logo claude laranja com nome em preto">
+    <img src="{% static 'img/logo-maritaca.png' %}" alt=" logo maritaca em verde representado por um papagaio">
 </body>
 </html>
