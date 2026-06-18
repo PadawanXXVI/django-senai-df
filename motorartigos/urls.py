@@ -1,9 +1,10 @@
 # Boa prática
 # Cada app se vira com suas rotas
 
-from django.urls import path # incluído
-from motorartigos.views import index # incluído
+from django.urls import path 
+from motorartigos.views import index, artigo # acresentado 'artigo'
 
 urlpatterns = [
-    path('', index), # define a rota do próprio app
+    path('', index),
+    path('artigo/', artigo, name='artigo') # nova rota acrescentada
 ]
