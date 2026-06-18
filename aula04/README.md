@@ -220,7 +220,7 @@ h1{
  - Exemplo completo:
 
 ```html
-{% load static%} <!-- carrega a página como estática-->
+{% load static %} <!-- carrega a página como estática-->
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -232,7 +232,7 @@ h1{
 </head>
 <body>
     
-    <h1>O mehlhor site de Django, IA e Data Science do Brasil</h1>
+    <h1>O melhor site de Django, IA e Data Science do Brasil</h1>
 </body>
 </html>
 ```
