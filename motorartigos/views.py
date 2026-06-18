@@ -8,3 +8,6 @@ from django.http import HttpResponse # incluído para criar a maninupar 'respost
 def index(request):
     # return HttpResponse("<h1>Oi</h1>")
     return render(request, 'motorartigos/index.html') # ativa a página index.html
+
+def artigo(request):
+    return render(request, 'motorartigos/artigo.html')
