@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse # incluído para criar a maninupar 'respostas' HTTP
+from motorartigos.models import Autor # importando a Classe Autor
 
 # Create your views here.
 # Aqui vou criar minhas rotas
@@ -7,6 +8,8 @@ from django.http import HttpResponse # incluído para criar a maninupar 'respost
 
 def index(request):
     # return HttpResponse("<h1>Oi</h1>")
+    # Mock objects = dados falsos
+    """ 
     autores = {
         1: {"nome": "André Roglem",
             "biografia": "estudante do SENAI de DB",
@@ -21,6 +24,9 @@ def index(request):
             "email":"victor@gmail.com"
         }
     }
+"""  
+    autores = Autor.objects.all() # busca todos os autores na Classe Autor
     return render(request, 'motorartigos/index.html', {"autores":autores}) # "autores" é o apelido; já autores, sem as aspas, é a origem dos dados
+
 def artigo(request):
     return render(request, 'motorartigos/artigo.html')

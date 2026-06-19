@@ -16,7 +16,7 @@
     <h1>Autores Cadastrados</h1>
     
     <ul>
-        {% for chave, autor in autores.items %}
+        {% for autor in autores %}
             <li>
                 <strong>ID do Autor:</strong> {{ chave }} <br>
                 <strong>Nome:</strong> {{ autor.nome }} <br>
@@ -29,4 +29,4 @@
         {% endfor %}
     </ul>
     
-{% endblock%}
+{% endblock %}

@@ -80,3 +80,70 @@ Em `templates/mortorartigos/index.html`, na últina linha vazia, antes do fim do
         <hr>
     </ul>
 ```
+
+## Importando direto do banco de dados
+
+Em `motorartigos/views`:
+
+```python
+def index(request):
+    # return HttpResponse("<h1>Oi</h1>")
+    # Mock objects = dados falsos
+    """ 
+    autores = {
+        1: {"nome": "André Roglem",
+            "biografia": "estudante do SENAI de DB",
+            "email": "roglem@nasa.gov.br"
+            },
+        2: {"nome": "Luiz Fernando",
+            "biografia": "Desenvolvedor Django",
+            "email": "fernando@gmail.com"
+            },
+        3: {"nome": "Victor John",
+            "biografia":"Desenvolvedor SQL",
+            "email":"victor@gmail.com"
+        }
+    }
+"""  
+    autores = Autor.objects.all() # busca todos os autores na Classe Autor - ou seja, conecta direto com o banco de dados, em vez de usar mock objects
+    return render(request, 'motorartigos/index.html', {"autores":autores}) # "autores" é o apelido; já autores, sem as aspas, é a origem dos dados
+```
+
+Em `templates/mortorartigos/index.html`, o `for` fica:
+
+```html
+<ul>
+        {% for autor in autores %}
+            <li>
+                <strong>ID do Autor:</strong> {{ chave }} <br>
+                <strong>Nome:</strong> {{ autor.nome }} <br>
+                <strong>Biografia:</strong> {{ autor.biografia }} <br>
+                <strong>E-mail:</strong> {{ autor.email }}
+            </li>
+            <hr>
+        {% empty %}
+            <p>Nenhum autor encontrado.</p>
+        {% endfor %}
+    </ul>
+```
+
+Fazer migrations:
+
+```bash
+python manage.py makemigrations motorartigos
+python manage.py migrate motorartigos
+```
+
+Rodar o servidor
+
+```bash
+python manage.py runserver
+```
+
+Entrar em Admin:
+
+```bash
+http://127.0.0.1:8000/admin
+```
+
+Cadastrar autores.
