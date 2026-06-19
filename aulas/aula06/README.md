@@ -5,4 +5,14 @@ Brasília, 19 de junho de 2026
 Anderson de Matos Guimarães  
 Professor: Rômulo César
 
+## Agenda
+
+- Lidando com dados
+
+## Lidando com Dados
+
+- Preparar o ambiente
+- Nomes dinâmmicos
+- Banco de Dados
+
 ## 
