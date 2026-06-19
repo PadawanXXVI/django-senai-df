@@ -9,8 +9,24 @@
     <a href="{% url 'artigo' %}"> <!-- cria m href para usar o url name-->
         <img src="{% static 'img/logo-chatgpt.png' %}" alt=" logo do chatgpt dourado"> <!-- transfere o link da imagem para dentro do href-->        
     </a>
-    
+     
     <img src="{% static 'img/logo-claude.png' %}" alt="logo claude laranja com nome em preto">
     <img src="{% static 'img/logo-maritaca.png' %}" alt=" logo maritaca em verde representado por um papagaio">
+
+    <h1>Autores Cadastrados</h1>
+    
+    <ul>
+        {% for chave, autor in autores.items %}
+            <li>
+                <strong>ID do Autor:</strong> {{ chave }} <br>
+                <strong>Nome:</strong> {{ autor.nome }} <br>
+                <strong>Biografia:</strong> {{ autor.biografia }} <br>
+                <strong>E-mail:</strong> {{ autor.email }}
+            </li>
+            <hr>
+        {% empty %}
+            <p>Nenhum autor encontrado.</p>
+        {% endfor %}
+    </ul>
     
 {% endblock%}
