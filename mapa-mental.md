@@ -285,3 +285,5 @@ python manage.py migrate motorartigos
 ```
 
 ---
+
+## Aula 03: Meta, Admin, .env, Novo App
