@@ -1,32 +1,33 @@
 from django.shortcuts import render
-from django.http import HttpResponse # incluído para criar a maninupar 'respostas' HTTP
-from motorartigos.models import Autor # importando a Classe Autor
-
-# Create your views here.
-# Aqui vou criar minhas rotas
-# Minhas regra de negócio
-
+#from django.http import HttpResponse
+from motorartigos.models import Autor
 def index(request):
-    # return HttpResponse("<h1>Oi</h1>")
-    # Mock objects = dados falsos
-    """ 
-    autores = {
-        1: {"nome": "André Roglem",
-            "biografia": "estudante do SENAI de DB",
-            "email": "roglem@nasa.gov.br"
-            },
-        2: {"nome": "Luiz Fernando",
-            "biografia": "Desenvolvedor Django",
-            "email": "fernando@gmail.com"
-            },
-        3: {"nome": "Victor John",
-            "biografia":"Desenvolvedor SQL",
-            "email":"victor@gmail.com"
-        }
+    #return HttpResponse('<h1>Oi</h1>')
+    # estrutura de dados em Python
+    #lista = [1,2,3,4,5,6]  #Mutável
+    #tupla = (1,2,3,4,5,6)  #Imutável
+    #combo_mac = ('big mac','coca cola','batatinha')
+    PI_MAT = 3.14
+    # chave e valor DICIONÁRIO
+    # MOCK OBJECTS
+    """
+       autores = {
+        1:{"nome":"André Roglem",
+           "biografia":"estudante do SENAI de BD",
+           "email":"roglem@nasa.gov.br"           
+          },
+        2:{"nome":"Luiz Fernando",
+           "biografia":"Desenvolvedor Django ",
+           "email":"fernando@gmail.com"},
+        3:{"nome":"Victor Jonh",
+           "biografia":"Desenvolvedor SQL ",
+           "email":"victor@gmail.com"}
     }
-"""  
-    autores = Autor.objects.all() # busca todos os autores na Classe Autor
-    return render(request, 'motorartigos/index.html', {"autores":autores}) # "autores" é o apelido; já autores, sem as aspas, é a origem dos dados
+    
+    """
+    autores = Autor.objects.all()
+   
+    return render(request,'motorartigos/index.html')
 
 def artigo(request):
-    return render(request, 'motorartigos/artigo.html')
+    return render(request,'motorartigos/artigo.html')

@@ -1,10 +1,10 @@
 # Boa prática
 # Cada app se vira com suas rotas
 
-from django.urls import path 
-from motorartigos.views import index, artigo # acresentado 'artigo'
+from django.urls import path
+from motorartigos.views import index, artigo
 
 urlpatterns = [
-    path('', index),
-    path('artigo/', artigo, name='artigo') # nova rota acrescentada
-]
+    path('',index,name='index'),
+    path('artigo/',artigo,name='artigo')
+ ]
