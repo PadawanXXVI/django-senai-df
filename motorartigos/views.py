@@ -27,7 +27,7 @@ def index(request):
     """
     autores = Autor.objects.all()
    
-    return render(request,'motorartigos/index.html')
+    return render(request,'motorartigos/index.html',{"autores":autores})
 
 def artigo(request):
     return render(request,'motorartigos/artigo.html')
