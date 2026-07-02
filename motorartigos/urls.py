@@ -1,7 +1,9 @@
 from django.urls import path
-from motorartigos.views import index,artigo
+
+from motorartigos import views
+
 
 urlpatterns = [
-    path('',index,name='index'),
-    path('artigo/',artigo,name='artigo')
- ]
+    path("", views.index, name="index"),
+    path("artigos/<int:artigo_id>/", views.artigo_detalhe, name="artigo_detalhe"),
+]

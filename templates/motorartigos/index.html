@@ -2,160 +2,51 @@
 {% load static %}
 
 {% block content %}
+
 <section class="container mb-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h4 class="text-white fw-bold m-0">Mais recentes</h4>
+
         <div>
-            <button class="btn btn-nav me-1">‹</button>
-            <button class="btn btn-nav">›</button>
+            <button class="btn btn-nav me-1" type="button">‹</button>
+            <button class="btn btn-nav" type="button">›</button>
         </div>
     </div>
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 flex-nowrap overflow-hidden">
-        <div class="col">
-            <a href="{% url 'artigo' %}" class="text-decoration-none">
-                <div class="card card-custom h-100 border-0">
-                    <div class="position-relative">
-                        <div class="card-img-top thumb-gradient"></div>
-                        <span class="badge position-absolute top-0 end-0 m-3 bg-danger-custom">AVANÇADO</span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <div>
-                            <small class="text-secondary d-block mb-2">🕒 Ontem</small>
-                            <h5 class="card-title text-white fw-bold fs-6">Agente de IA integrado com Google Sheets no
-                                n8n</h5>
-                            <p class="card-text text-secondary small">Os agentes de inteligência artificial estão a
-                                redefinir a automação moderna. Neste artigo...</p>
-                        </div>
-                        <div
-                            class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top border-dark-light">
-                            <span class="small text-white"><span class="avatar me-1">AC</span> Ana Costa</span>
-                            <span class="text-primary-custom small fw-bold">Ler mais →</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col">
-            <a href="{% url 'artigo' %}" class="text-decoration-none">
-                <div class="card card-custom h-100 border-0">
-                    <div class="position-relative">
-                        <div class="card-img-top thumb-mockup"></div>
-                        <span
-                            class="badge position-absolute top-0 end-0 m-3 bg-warning-custom text-dark">INTERMÉDIO</span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <div>
-                            <small class="text-secondary d-block mb-2">🕒 Há 2 dias</small>
-                            <h5 class="card-title text-white fw-bold fs-6">Como passar pela IA em processos seletivos em
-                                2026</h5>
-                            <p class="card-text text-secondary small">Com o avanço dos sistemas ATS (Applicant Tracking
-                                Systems) potenciados por inteligência...</p>
-                        </div>
-                        <div
-                            class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top border-dark-light">
-                            <span class="small text-white"><span class="avatar me-1 bg-primary">JS</span> João
-                                Silva</span>
-                            <span class="text-primary-custom small fw-bold">Ler mais →</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col">
-            <a href="{% url 'artigo' %}" class="text-decoration-none">
-                <div class="card card-custom h-100 border-0">
-                    <div class="position-relative">
-                        <div class="card-img-top thumb-dashboard"></div>
-                        <span class="badge position-absolute top-0 end-0 m-3 bg-success-custom">BÁSICO</span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <div>
-                            <small class="text-secondary d-block mb-2">🕒 Há 7 dias</small>
-                            <h5 class="card-title text-white fw-bold fs-6">Modelo preditivo: o guia completo para
-                                começar do zero</h5>
-                            <p class="card-text text-secondary small">Seja bem-vindo ao mundo da inteligência analítica.
-                                Se sempre quis entender o que está p...</p>
-                        </div>
-                        <div
-                            class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top border-dark-light">
-                            <span class="small text-white"><span class="avatar me-1">AC</span> Ana Costa</span>
-                            <span class="text-primary-custom small fw-bold">Ler mais →</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col">
-            <a href="{% url 'artigo' %}" class="text-decoration-none">
-                <div class="card card-custom h-100 border-0">
-                    <div class="position-relative">
-                        <div class="card-img-top thumb-mockup"></div>
-                        <span class="badge position-absolute top-0 end-0 m-3 bg-danger-custom">AVANÇADO</span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <div>
-                            <small class="text-secondary d-block mb-2">🕒 Há 10 dias</small>
-                            <h5 class="card-title text-white fw-bold fs-6">Arquitetando Aplicações Escaláveis com Docker
-                            </h5>
-                            <p class="card-text text-secondary small">Garantir que um ecossistema se mantém estável sob
-                                picos repentinos de acessos exige rob...</p>
-                        </div>
-                        <div
-                            class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top border-dark-light">
-                            <span class="small text-white"><span class="avatar me-1 bg-primary">JS</span> João
-                                Silva</span>
-                            <span class="text-primary-custom small fw-bold">Ler mais →</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
+        {% for artigo in artigos_recentes %}
+            <div class="col">
+                {% include 'motorartigos/partials/_card_artigo.html' %}
+            </div>
+        {% empty %}
+            <div class="col-12">
+                <p class="text-white">Nenhum artigo recente encontrado.</p>
+            </div>
+        {% endfor %}
     </div>
 </section>
 
 <section class="container mb-5">
     <h4 class="text-white fw-bold mb-4">Todos os Artigos</h4>
 
-    <div class="row g-4">
-        {% for artigo in artigos %} 
-        <div class="col-12 col-md-6 col-lg-4">
-            <a href="#" class="text-decoration-none">
-                <div class="card card-custom h-100 border-0">
-                    <div class="position-relative">
-                        {% if artigo.foto %}
-                            <img src="{{ artigo.foto.url }}" class="card-img-top" alt="{{ artigo.titulo }}">
-                        {% else %}
-                            <div class="card-img-top thumb-gradient"></div>
-                        {% endif %}
-                        
-                        <span class="badge position-absolute top-0 end-0 m-3 bg-primary">
-                            {{ artigo.get_nivel_display }}
-                        </span>
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <div>
-                            <small class="text-secondary d-block mb-2">🕒 {{ artigo.data_publicacao|date:"d/m/Y" }}</small>
-                            <h5 class="card-title text-white fw-bold fs-6">{{ artigo.titulo }}</h5>
-                            <p class="card-text text-secondary small">
-                                Eixo: {{ artigo.id_fk_eixo.nome }}
-                            </p>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top border-dark-light">
-                            <span class="small text-white">
-                                <span class="avatar me-1">AC</span> {{ artigo.id_fk_autor.nome }}
-                            </span>
-                            <span class="text-primary-custom small fw-bold">Ler mais →</span>
-                        </div>
-                    </div>
-                </div>
+    {% if busca or eixo_id %}
+        <p class="text-secondary small">
+            Exibindo resultados filtrados.
+            <a href="{% url 'index' %}" class="text-primary-custom text-decoration-none">
+                Limpar filtros
             </a>
-        </div>
+        </p>
+    {% endif %}
+
+    <div class="row g-4">
+        {% for artigo in artigos %}
+            <div class="col-12 col-md-6 col-lg-4">
+                {% include 'motorartigos/partials/_card_artigo.html' %}
+            </div>
         {% empty %}
-            <p class="text-white">Nenhum artigo encontrado.</p>
+            <div class="col-12">
+                <p class="text-white">Nenhum artigo encontrado.</p>
+            </div>
         {% endfor %}
     </div>
 </section>
