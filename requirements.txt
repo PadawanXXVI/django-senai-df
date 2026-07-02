@@ -1,8 +1,12 @@
 asgiref==3.11.1
+beautifulsoup4==4.15.0
 Django==4.2
 django-tinymce==5.0.0
 mysqlclient==2.2.8
+pillow==12.3.0
 python-dotenv==1.2.2
+ruff==0.15.20
+soupsieve==2.8.4
 sqlparse==0.5.5
 typing_extensions==4.15.0
 tzdata==2026.2

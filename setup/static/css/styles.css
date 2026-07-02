@@ -1,30 +1,118 @@
-/*  
-   SELETOR
-      nome de uma tag html
-      #
-      .
-      <p>    </p>
-      p{
-          color:red;
-      }
-      .preto{
-         color:black;
-      }
+/* Configurações Gerais do Tema Dark */
+body {
+    background-color: #0b0f19;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+}
 
-*/
-body{
-    background-color:#9c7c7c;    
+.bg-dark-custom {
+    background-color: #0b0f19;
 }
-h1{
-    color:white;
+
+.border-dark-light {
+    border-color: #1e2640 !important;
 }
-img{
-    width:10%;
+
+.max-w-text {
+    max-width: 600px;
 }
-.rodape {
+
+/* Badge Superior */
+.badge-status {
+    background-color: #111827;
+    border: 1px solid #374151;
+    color: #9ca3af;
+    font-size: 0.75rem;
+}
+
+/* Input de Busca */
+.search-box {
+    background-color: #111827;
+    border: 1px solid #1f2937;
+}
+
+/* Filtros / Eixos */
+.btn-filter {
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    color: #9ca3af;
+    font-size: 0.85rem;
+    border-radius: 20px;
+    padding: 6px 16px;
+    transition: all 0.2s ease;
+}
+
+.btn-filter:hover {
+    background-color: #1f2937;
+    color: #fff;
+}
+
+.btn-filter.active {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border-color: #3b82f6;
+}
+
+/* Botões de navegação carrossel */
+.btn-nav {
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    color: #fff;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    line-height: 28px;
+}
+
+/* Estilização dos Cards */
+.card-custom {
+    background-color: #111c30;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-custom:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Cores das Badges dos Cards */
+.bg-danger-custom { background-color: #ef4444; font-size: 0.7rem; }
+.bg-warning-custom { background-color: #f59e0b; font-size: 0.7rem; }
+.bg-success-custom { background-color: #10b981; font-size: 0.7rem; }
+.text-primary-custom { color: #60a5fa; }
+
+/* Placeholders das Imagens dos Cards com os tons da imagem */
+.thumb-gradient {
+    height: 160px;
+    background: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
+}
+
+.thumb-mockup {
+    height: 160px;
+    background: linear-gradient(135deg, #1e293b, #475569);
+}
+
+.thumb-dashboard {
+    height: 160px;
+    background: linear-gradient(135deg, #064e3b, #022c22);
+}
+
+/* Elementos Internos do Card */
+.avatar {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: #6366f1;
+    border-radius: 50%;
     text-align: center;
-    padding: 1.5rem;
-    background-color: #f1f1f1;
-    color: #333;
-    margin-top: auto; /* Pushes the footer to the bottom if the body is a flex container */
+    font-size: 0.65rem;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+.text-xs {
+    font-size: 0.75rem;
 }

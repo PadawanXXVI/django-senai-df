@@ -1,0 +1,34 @@
+{% load static %}
+
+    <nav class="navbar navbar-dark bg-dark-custom pt-4">
+        <div class="container d-flex justify-content-between align-items-center">
+            <span class="navbar-brand fw-bold fs-4 text-white">DevBlog <span class="text-secondary fs-5 fw-normal">Django</span></span>
+            <span class="badge rounded-pill badge-status px-3 py-2">Mapeamento de Modelos Django Ativo</span>
+        </div>
+    </nav>
+
+    <header class="container my-4 text-secondary">
+        <p class="fs-5 max-w-text">Descubra artigos profundos criados por especialistas e líderes de transformação. Filtre pelo seu eixo ou procure termos de interesse.</p>
+    </header>
+
+    <section class="container mb-5">
+        <div class="search-box p-3 rounded d-flex align-items-center">
+            <span class="text-secondary me-2">🔍</span>
+            <input type="text" class="form-control bg-transparent border-0 text-white shadow-none" placeholder="Pesquisar artigos por título, autor ou tecnologia (ex: javascript, n8n, dados)...">
+        </div>
+    </section>
+
+    <section class="container mb-5">
+        <h5 class="text-white fw-bold mb-3">Eixos de Tecnologia</h5>
+        <div class="d-flex flex-wrap gap-2">
+            <a href="{% url 'index' %}" class="btn btn-filter active">Todos os artigos</a>
+            <a href="#" class="btn btn-filter">HTML</a>
+            <a href="#" class="btn btn-filter">CSS</a>
+            <a href="#" class="btn btn-filter">Views</a>
+            <a href="#" class="btn btn-filter">Templates</a>
+            <a href="#" class="btn btn-filter">Urls</a>
+            <a href="#" class="btn btn-filter">Django ADMIN</a>
+            <a href="#" class="btn btn-filter">Django ORM</a>
+        </div>
+    </section>
+    
