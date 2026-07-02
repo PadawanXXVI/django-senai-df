@@ -116,3 +116,40 @@ body {
 .text-xs {
     font-size: 0.75rem;
 }
+
+.article-detail-img {
+    max-height: 420px;
+    object-fit: cover;
+}
+
+.article-detail-placeholder {
+    height: 360px;
+}
+
+.article-content {
+    line-height: 1.8;
+}
+
+.article-content p {
+    margin-bottom: 1.25rem;
+}
+
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+    color: #ffffff;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.author-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+.avatar-lg {
+    width: 64px;
+    height: 64px;
+    font-size: 1rem;
+}
