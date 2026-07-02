@@ -1,16 +1,34 @@
 /* Configurações Gerais do Tema Dark */
-body {
-    background-color: #0b0f19;
-    color: #ffffff;
-    font-family: system-ui, -apple-system, sans-serif;
+:root {
+    --bg-darkest: #0b0f19;
+    --bg-dark: #111827;
+    --bg-card: #111c30;
+    --bg-card-hover: #162238;
+    --border-color: #1f2937;
+    --border-light: #1e2640;
+    --text-main: #ffffff;
+    --text-muted: #9ca3af;
+    --primary-accent: #3b82f6;
+    --primary-light: #60a5fa;
+    --danger-accent: #ef4444;
+    --warning-accent: #f59e0b;
+    --success-accent: #10b981;
 }
 
+body {
+    background-color: var(--bg-darkest);
+    color: var(--text-main);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    min-height: 100vh;
+}
+
+/* Estrutura geral */
 .bg-dark-custom {
-    background-color: #0b0f19;
+    background-color: var(--bg-darkest);
 }
 
 .border-dark-light {
-    border-color: #1e2640 !important;
+    border-color: var(--border-light) !important;
 }
 
 .max-w-text {
@@ -19,23 +37,31 @@ body {
 
 /* Badge Superior */
 .badge-status {
-    background-color: #111827;
+    background-color: var(--bg-dark);
     border: 1px solid #374151;
-    color: #9ca3af;
+    color: var(--text-muted);
     font-size: 0.75rem;
 }
 
 /* Input de Busca */
 .search-box {
-    background-color: #111827;
-    border: 1px solid #1f2937;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+}
+
+.search-box input::placeholder {
+    color: #6b7280;
+}
+
+.search-box input:focus {
+    color: var(--text-main);
 }
 
 /* Filtros / Eixos */
 .btn-filter {
-    background-color: #111827;
-    border: 1px solid #1f2937;
-    color: #9ca3af;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
     font-size: 0.85rem;
     border-radius: 20px;
     padding: 6px 16px;
@@ -44,79 +70,133 @@ body {
 
 .btn-filter:hover {
     background-color: #1f2937;
-    color: #fff;
+    color: var(--text-main);
+    border-color: var(--primary-accent);
 }
 
 .btn-filter.active {
-    background-color: #3b82f6;
-    color: #ffffff;
-    border-color: #3b82f6;
+    background-color: var(--primary-accent);
+    color: var(--text-main);
+    border-color: var(--primary-accent);
 }
 
 /* Botões de navegação carrossel */
 .btn-nav {
-    background-color: #111827;
-    border: 1px solid #1f2937;
-    color: #fff;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
     border-radius: 50%;
     width: 32px;
     height: 32px;
     padding: 0;
     line-height: 28px;
+    transition: all 0.2s ease;
+}
+
+.btn-nav:hover {
+    background-color: var(--primary-accent);
+    border-color: var(--primary-accent);
 }
 
 /* Estilização dos Cards */
 .card-custom {
-    background-color: #111c30;
-    border-radius: 12px;
+    background-color: var(--bg-card);
+    border-radius: 14px;
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .card-custom:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
 }
 
-/* Cores das Badges dos Cards */
-.bg-danger-custom { background-color: #ef4444; font-size: 0.7rem; }
-.bg-warning-custom { background-color: #f59e0b; font-size: 0.7rem; }
-.bg-success-custom { background-color: #10b981; font-size: 0.7rem; }
-.text-primary-custom { color: #60a5fa; }
+/* Wrapper das imagens dos cards */
+.card-img-wrapper {
+    height: 180px;
+    overflow: hidden;
+    background-color: #111827;
+}
 
-/* Placeholders das Imagens dos Cards com os tons da imagem */
+/* Imagens reais dos cards */
+.card-img-custom,
+.card-custom .card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.card-custom:hover .card-img-custom {
+    transform: scale(1.04);
+}
+
+/* Placeholders das Imagens dos Cards */
 .thumb-gradient {
-    height: 160px;
+    height: 180px;
     background: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
 }
 
 .thumb-mockup {
-    height: 160px;
+    height: 180px;
     background: linear-gradient(135deg, #1e293b, #475569);
 }
 
 .thumb-dashboard {
-    height: 160px;
+    height: 180px;
     background: linear-gradient(135deg, #064e3b, #022c22);
 }
 
-/* Elementos Internos do Card */
+/* Cores das Badges dos Cards */
+.bg-danger-custom {
+    background-color: var(--danger-accent);
+    font-size: 0.7rem;
+}
+
+.bg-warning-custom {
+    background-color: var(--warning-accent);
+    font-size: 0.7rem;
+}
+
+.bg-success-custom {
+    background-color: var(--success-accent);
+    font-size: 0.7rem;
+}
+
+.text-primary-custom {
+    color: var(--primary-light);
+}
+
+/* Elementos internos do card */
+.card-title {
+    line-height: 1.35;
+}
+
+.card-text {
+    line-height: 1.5;
+}
+
 .avatar {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 24px;
     height: 24px;
     background-color: #6366f1;
+    color: #ffffff;
     border-radius: 50%;
     text-align: center;
     font-size: 0.65rem;
-    line-height: 24px;
-    font-weight: bold;
+    line-height: 1;
+    font-weight: 700;
 }
 
 .text-xs {
     font-size: 0.75rem;
 }
 
+/* Página de detalhe do artigo */
 .article-detail-img {
     max-height: 420px;
     object-fit: cover;
@@ -124,6 +204,7 @@ body {
 
 .article-detail-placeholder {
     height: 360px;
+    background: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
 }
 
 .article-content {
@@ -152,4 +233,20 @@ body {
     width: 64px;
     height: 64px;
     font-size: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card-img-wrapper,
+    .card-img-custom,
+    .card-custom .card-img-top,
+    .thumb-gradient,
+    .thumb-mockup,
+    .thumb-dashboard {
+        height: 200px;
+    }
+
+    .article-detail-placeholder {
+        height: 260px;
+    }
 }

@@ -35,7 +35,12 @@ class Artigo(models.Model):
         verbose_name='Título',
         default='Sem título'
     )
-    foto = models.ImageField(upload_to="fotos/%Y/%m/%d/", blank=True, null=True, verbose_name="Foto de Capa")
+    foto = models.ImageField(
+        upload_to="fotos/%Y/%m/%d/",
+        blank=True,
+        null=True,
+        verbose_name="Foto de Capa"
+        )
     publicada = models.BooleanField(default=False)
     TAG_NIVEL = [
         ("B", "Básico"),
