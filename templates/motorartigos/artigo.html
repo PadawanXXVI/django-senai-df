@@ -3,26 +3,100 @@
 
 {% block content %}
 
+<main class="container mb-5">
 
-<main class="container my-5">
     <div class="row justify-content-center">
-        <div class="col-12 col-lg-8">
-            <span class="badge bg-danger-custom mb-3">AVANÇADO</span>
-            <h1 class="text-white fw-bold mb-3">Agente de IA integrado com Google Sheets no n8n</h1>
-            <p class="text-secondary mb-4">Publicado por Ana Costa • 🕒 Ontem</p>
+        <div class="col-lg-9">
 
-            <div class="thumb-gradient rounded mb-4" style="height: 300px;"></div>
+            <a href="{% url 'index' %}" class="btn btn-filter mb-4">
+                ← Voltar ao início
+            </a>
 
-            <article class="text-secondary fs-5 lh-base">
-                <p>Os agentes de inteligência artificial estão a redefinir a automação moderna. Integrar essas
-                    ferramentas com ecossistemas robustos como o Google Sheets usando fluxos do n8n permite criar
-                    pipelines autônomos de dados sem tocar em uma única linha de código tradicional.</p>
-                <h3 class="text-white fw-bold mt-4 mb-3">Por que usar n8n para Agentes de IA?</h3>
-                <p>O n8n oferece nós nativos para LangChain, permitindo a inserção de memória, prompts customizados e
-                    ferramentas específicas diretamente no fluxo de trabalho.</p>
+            <div class="mb-3 d-flex flex-wrap gap-2 align-items-center">
+                <span class="btn btn-filter active">
+                    {{ artigo.id_fk_eixo.nome }}
+                </span>
+
+                {% if artigo.nivel == "A" %}
+                    <span class="badge bg-danger-custom">
+                        {{ artigo.get_nivel_display|upper }}
+                    </span>
+                {% elif artigo.nivel == "I" %}
+                    <span class="badge bg-warning-custom text-dark">
+                        {{ artigo.get_nivel_display|upper }}
+                    </span>
+                {% else %}
+                    <span class="badge bg-success-custom">
+                        {{ artigo.get_nivel_display|upper }}
+                    </span>
+                {% endif %}
+
+                <span class="text-secondary small">
+                    🕒 Publicado em {{ artigo.data_publicacao|date:"d/m/Y H:i" }}
+                </span>
+            </div>
+
+            <h1 class="text-white fw-bold mb-4">
+                {{ artigo.titulo }}
+            </h1>
+
+            <div class="mb-4">
+                {% if artigo.foto %}
+                    <img src="{{ artigo.foto.url }}" class="img-fluid rounded-4 w-100 article-detail-img" alt="{{ artigo.titulo }}">
+                {% else %}
+                    <div class="thumb-gradient rounded-4 article-detail-placeholder"></div>
+                {% endif %}
+            </div>
+
+            <article class="article-content text-secondary fs-5">
+                {{ artigo.texto|safe }}
             </article>
+
+            <section class="author-box mt-5 p-4 rounded-4">
+                <div class="d-flex align-items-center gap-3">
+                    <span class="avatar avatar-lg">
+                        {{ artigo.id_fk_autor.nome|slice:":2"|upper }}
+                    </span>
+
+                    <div>
+                        <span class="text-secondary small text-uppercase">
+                            Escrito por
+                        </span>
+
+                        <h5 class="text-white fw-bold mb-1">
+                            {{ artigo.id_fk_autor.nome }}
+                        </h5>
+
+                        <p class="text-secondary mb-2">
+                            {{ artigo.id_fk_autor.biografia }}
+                        </p>
+
+                        <a href="mailto:{{ artigo.id_fk_autor.email }}" class="text-primary-custom text-decoration-none fw-bold">
+                            {{ artigo.id_fk_autor.email }}
+                        </a>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </div>
+
 </main>
+
+{% if recomendados %}
+<section class="container mb-5">
+    <h4 class="text-white fw-bold mb-4">
+        Outros artigos que você pode gostar
+    </h4>
+
+    <div class="row g-4">
+        {% for artigo in recomendados %}
+            <div class="col-12 col-md-6 col-lg-4">
+                {% include 'motorartigos/partials/_card_artigo.html' %}
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
 
 {% endblock %}
